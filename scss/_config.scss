@@ -7,6 +7,12 @@ $backgroud-opacity: 0.7;
     transition: all 0.5s ease-out;
 }
 
+@mixin border-radius ($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
 @mixin background {
     @if $show-home-image {
         &#bg-img {
