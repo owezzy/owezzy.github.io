@@ -143,7 +143,7 @@ header {
 
 main {
   padding: 4rem;
-  min-height: clac(100vh -60px); }
+  min-height: clac(100vh -60vh); }
   main .icons {
     transform: rotate(1turn);
     margin-top: 1rem; }
@@ -192,6 +192,67 @@ main {
       opacity: 0.5;
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
+
+.contact-body {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Century Gothic;
+  margin: 2rem auto;
+  /* Text Input */
+  /* FF 18 */
+  /* FF 19+ */
+  /* Submit Button */ }
+  .contact-body .roundedborder, .contact-body form, .contact-body input[type='email'], .contact-body textarea, .contact-body input[type='submit'] {
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+    background-clip: padding-box;
+    border: 2px solid #2b2b2b; }
+  .contact-body form {
+    font-size: 1.2em;
+    margin: 1rem auto;
+    padding: 2em;
+    width: 70%; }
+  .contact-body input,
+  .contact-body select,
+  .contact-body textarea {
+    outline: none; }
+  .contact-body label {
+    padding: 1rem .5em 0 .5em; }
+  .contact-body input[type='email'] {
+    background-color: #373737;
+    color: #f2d849;
+    font-size: 1em;
+    margin: .2em 0 1em;
+    padding: .25em;
+    width: 100%; }
+  .contact-body ::-webkit-input-placeholder {
+    color: #5e5e5e; }
+  .contact-body :-moz-placeholder {
+    color: #5e5e5e; }
+  .contact-body ::-moz-placeholder {
+    color: #5e5e5e; }
+  .contact-body :-ms-input-placeholder {
+    color: #5e5e5e; }
+  .contact-body textarea {
+    background-color: #373737;
+    color: #f2d849;
+    font-size: 1em;
+    height: 10em;
+    margin: .5em 0 1em;
+    padding: 1em;
+    width: 100%; }
+  .contact-body input[type='submit'] {
+    border: 3px solid #2b2b2b;
+    background-color: #515151;
+    cursor: pointer;
+    color: white;
+    float: right;
+    font-size: 1em;
+    padding: .25em 1em;
+    text-shadow: .1em .1em .2em #4d3c0e; }
+  .contact-body input[type='submit']:hover {
+    background-color: #debf10; }
 
 .btn, .btn-dark, .btn-light {
   display: block;

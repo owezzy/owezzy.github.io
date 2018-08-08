@@ -46,7 +46,7 @@ header {
 
 main {
     padding: 4rem;
-    min-height: clac(100vh -60px);
+    min-height: clac(100vh -60vh);
     .icons {
         transform: rotate(1turn);
         margin-top: 1rem;
@@ -110,6 +110,83 @@ main {
             border-color: $secondary-color;
             @include easeOut;
         }
+    }
+}
+
+//contact me scss
+.contact-body {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Century Gothic;
+    margin: 2rem auto;
+    .roundedborder {
+        @include border-radius (.3em);
+        border: 2px solid darken($primary-color, 10%);
+    }
+    form {
+        font-size: 1.2em;
+        margin: 1rem auto;
+        @extend .roundedborder;
+        padding: 2em;
+        width: 70%;
+    }
+    input,
+    select,
+    textarea {
+        outline: none;
+    }
+    label {
+        padding: 1rem .5em 0 .5em;
+    }
+    /* Text Input */
+    input[type='email'] {
+        @extend .roundedborder;
+        background-color: darken($primary-color, 5%);
+        color: lighten($secondary-color, 10%);
+        font-size: 1em;
+        margin: .2em 0 1em;
+        padding: .25em;
+        width: 100%;
+    }
+    ::-webkit-input-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    :-moz-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    /* FF 18 */
+    ::-moz-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    /* FF 19+ */
+    :-ms-input-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    textarea {
+        @extend .roundedborder;
+        background-color: darken($primary-color, 5%);
+        color: lighten($secondary-color, 10%);
+        font-size: 1em;
+        height: 10em;
+        margin: .5em 0 1em;
+        padding: 1em;
+        width: 100%;
+    }
+    /* Submit Button */
+    input[type='submit'] {
+        @extend .roundedborder;
+        border: 3px solid darken($primary-color, 10%);
+        background-color: lighten($primary-color, 5%);
+        cursor: pointer;
+        color: lighten($secondary-color, 50%);
+        float: right;
+        font-size: 1em;
+        padding: .25em 1em;
+        text-shadow: .1em .1em .2em #4d3c0e;
+    }
+    input[type='submit']:hover {
+        background-color: darken($secondary-color, 5%);
     }
 }
 
