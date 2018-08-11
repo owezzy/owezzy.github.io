@@ -1,8 +1,9 @@
-$primary-color: #444;
-$secondary-color: #eece1a;
+$primary-color:#011931;
+$secondary-color: #f5dd08;
+$color: #fff;
 $show-home-image: true;
 $home-image: url(/dist/img/office-bg.jpg);
-$backgroud-opacity: 0.7;
+$backgroud-opacity: 0.2;
 @mixin easeOut {
     transition: all 0.5s ease-out;
 }
@@ -36,7 +37,7 @@ $backgroud-opacity: 0.7;
 //set Text color
 @function set-text-color($color) {
     @if (lightness($color)> 40) {
-        @return #000;
+        @return #111;
     }
     @else {
         @return #fff;
@@ -55,13 +56,13 @@ $backgroud-opacity: 0.7;
 }
 
 @mixin mediaLg {
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 769px) and (max-width: 1171px) {
         @content;
     }
 }
 
 @mixin mediaXl {
-    @media screen and(min-width: 901px) and (max-width: 1171px) {
+    @media screen and(min-width: 1171px) {
         @content;
     }
 }
