@@ -217,6 +217,140 @@ main {
     color: #333
 }
 
+//
+//cv sass
+.cv-container {
+    width: 90%;
+    max-width: 1171px;
+    margin: 0 auto;
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+#cv-timeline {
+    position: relative;
+    padding: 2em 0;
+    margin: {
+        top: 2em;
+        bottom: 2em;
+    }
+    &::before {
+        //this is the vertical line
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 18px;
+        height: 100%;
+        width: 3px;
+        background: darken($secondary-color, 5);
+    }
+}
+
+.cv-timeline-block {
+    position: relative;
+    margin: 2em 0;
+    @include clearfix;
+    &:first-child {
+        margin-top: 0;
+    }
+    &.last-child {
+        margin-bottom: 0;
+    }
+}
+
+.cv-timeline-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px $secondary-color, inset 0 2px 0 rgba( #000000, .08), 0 3px 0 4px rgba(#000000, .05);
+    img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        margin-left: -12px;
+        margin-top: -12px;
+    }
+    &.cv-picture {
+        background: #4ec
+    }
+    &.cv-movie {
+        background: #26e226
+    }
+    &.cv-location {
+        background: #da29e0
+    }
+}
+
+@keyframes cd-bounce-1 {
+    0% {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cv-timeline-content {
+    position: relative;
+    margin: 60px;
+    @include cv-border-radius;
+    padding: 1em;
+    box-shadow: 0 0 3px 0 darken($secondary-color, 5);
+    @include clearfix;
+    p,
+    .cv-read-more,
+    .cv-date {
+        font-size: 13px;
+    }
+    .cv-read-more,
+    .cv-date {
+        display: inline;
+    }
+    p {
+        margin: 1rem 0;
+        line-height: 1.6;
+    }
+    .cv-read-more {
+        float: right;
+        padding: .8em 1em;
+        background: lighten($primary-color, 5);
+        @include cv-border-radius;
+        .no-touch &:hover {
+            background-color: lighten($primary-color, 5);
+        }
+    }
+    .cv-date {
+        float: left;
+        padding: .8em 0;
+        opacity: .7;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        right: 100%;
+        height: 0;
+        width: 0;
+        border: 7px solid transparent;
+        border-right: 7px solid $secondary-color;
+    }
+}
+
+//
 //footer
 #main-footer {
     text-align: center;

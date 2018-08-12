@@ -9,9 +9,24 @@ $backgroud-opacity: 0.2;
 }
 
 @mixin border-radius ($radius) {
-    -webkit-border-radius: $radius;
+    // -webkit-border-radius: $radius;
     border-radius: $radius;
     background-clip: padding-box;
+}
+
+@mixin cv-border-radius($radius:.25em) {
+    border-radius: $radius;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 @mixin background {
