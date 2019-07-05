@@ -107,7 +107,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     img {
         width: 100%;
-        border: 3px #fff solid;
+        border: 3px $primary-color solid;
         &:hover {
             opacity: 0.5;
             border-color: $secondary-color;
@@ -219,6 +219,10 @@ main {
 
 //
 //cv sass
+.cv-pdf, iframe {
+    margin: 0 auto;
+}
+
 .cv-container {
     width: 90%;
     max-width: 1171px;
