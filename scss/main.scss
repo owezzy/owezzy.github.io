@@ -1,0 +1,366 @@
+@import 'config';
+@import 'menu';
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include background;
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+//headings
+h1,
+h2,
+h3 {
+    margin: 0%;
+    font-weight: 400;
+    &.lg-heading {
+        font-size: 6rem;
+    }
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem; //background: rgba(lighten($primary-color, 2), 0.5);
+    }
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main {
+    padding: 4rem;
+    min-height: clac(100vh -60vh);
+    .icons {
+        transform: rotate(1turn);
+        margin-top: 1rem;
+        a {
+            padding: 0.4rem;
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+    &#home {
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
+        }
+    }
+}
+
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-image: url(/dist/img/profile-pic-small.png);
+        border: $secondary-color 3px solid;
+    }
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+    .job-1 {
+        grid-area: job1;
+    }
+    .job-2 {
+        grid-area: job2;
+    }
+    .job-3 {
+        grid-area: job3;
+    }
+    .job {
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+    }
+}
+
+//work/projects scscc
+.projects {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    img {
+        width: 100%;
+        border: 3px $primary-color solid;
+        &:hover {
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+}
+
+//contact me scss
+.contact-body {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Century Gothic;
+    margin: 2rem auto;
+    .roundedborder {
+        @include border-radius (.3em);
+        border: 2px solid darken($primary-color, 10%);
+    }
+    form {
+        font-size: 1.2em;
+        margin: 1rem auto;
+        @extend .roundedborder;
+        padding: 2em;
+        width: 70%;
+    }
+    input,
+    select,
+    textarea {
+        outline: none;
+    }
+    label {
+        padding: 1rem .5em 0 .5em;
+    }
+    /* Text Input */
+    input[type='email'] {
+        @extend .roundedborder;
+        background-color: darken($primary-color, 5%);
+        color: lighten($secondary-color, 10%);
+        font-size: 1em;
+        margin: .2em 0 1em;
+        padding: .25em;
+        width: 100%;
+    }
+    ::-webkit-input-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    :-moz-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    /* FF 18 */
+    ::-moz-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    /* FF 19+ */
+    :-ms-input-placeholder {
+        color: lighten($primary-color, 10%);
+    }
+    textarea {
+        @extend .roundedborder;
+        background-color: darken($primary-color, 5%);
+        color: lighten($secondary-color, 10%);
+        font-size: 1em;
+        height: 10em;
+        margin: .5em 0 1em;
+        padding: 1em;
+        width: 100%;
+    }
+    /* Submit Button */
+    input[type='submit'] {
+        @extend .roundedborder;
+        border: 3px solid darken($primary-color, 10%);
+        background-color: lighten($primary-color, 5%);
+        cursor: pointer;
+        color: lighten($secondary-color, 50%);
+        float: right;
+        font-size: 1em;
+        padding: .25em 1em;
+        text-shadow: .1em .1em .2em #4d3c0e;
+    }
+    input[type='submit']:hover {
+        background-color: darken($secondary-color, 5%);
+    }
+}
+
+// Button style
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+    }
+}
+
+.btn-dark {
+    @extend.btn;
+    background: darken($primary-color, 50);
+    color: #fff
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($primary-color, 50);
+    color: #333
+}
+
+//
+//cv sass
+.cv-pdf, iframe {
+    margin: 0 auto;
+}
+
+.cv-container {
+    width: 90%;
+    max-width: 1171px;
+    margin: 0 auto;
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+#cv-timeline {
+    position: relative;
+    padding: 2em 0;
+    margin: {
+        top: 2em;
+        bottom: 2em;
+    }
+    &::before {
+        //this is the vertical line
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 18px;
+        height: 100%;
+        width: 3px;
+        background: darken($secondary-color, 5);
+    }
+}
+
+.cv-timeline-block {
+    position: relative;
+    margin: 2em 0;
+    @include clearfix;
+    &:first-child {
+        margin-top: 0;
+    }
+    &.last-child {
+        margin-bottom: 0;
+    }
+}
+
+.cv-timeline-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px $secondary-color, inset 0 2px 0 rgba( #000000, .08), 0 3px 0 4px rgba(#000000, .05);
+    img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        margin-left: -12px;
+        margin-top: -12px;
+    }
+    &.cv-picture {
+        background: #4ec
+    }
+    &.cv-movie {
+        background: #26e226
+    }
+    &.cv-location {
+        background: #da29e0
+    }
+}
+
+@keyframes cd-bounce-1 {
+    0% {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cv-timeline-content {
+    position: relative;
+    margin: 60px;
+    @include cv-border-radius;
+    padding: 1em;
+    box-shadow: 0 0 3px 0 darken($secondary-color, 5);
+    @include clearfix;
+    p,
+    .cv-read-more,
+    .cv-date {
+        font-size: 13px;
+    }
+    .cv-read-more,
+    .cv-date {
+        display: inline;
+    }
+    p {
+        margin: 1rem 0;
+        line-height: 1.6;
+    }
+    .cv-read-more {
+        float: right;
+        padding: .8em 1em;
+        background: lighten($primary-color, 5);
+        @include cv-border-radius;
+        .no-touch &:hover {
+            background-color: lighten($primary-color, 5);
+        }
+    }
+    .cv-date {
+        float: left;
+        padding: .8em 0;
+        opacity: .7;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        right: 100%;
+        height: 0;
+        width: 0;
+        border: 7px solid transparent;
+        border-right: 7px solid $secondary-color;
+    }
+}
+
+//
+//footer
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    color: set-text-color($primary-color);
+    height: 60px;
+}
+
+@import 'mobile';
