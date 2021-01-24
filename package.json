@@ -2,11 +2,11 @@
   "name": "owezzy.github.io",
   "version": "1.0.0",
   "description": "responsive web based portfolio",
-  "main": "index.html",
+  "main": "docs/index.html",
   "homepage": "https://github.com/owezzy/owezzy.github.io",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-    "deploy": "gh-pages -d dist"
+    "sass": "node-sass -w scss/ -o docs/css/ --recursive",
+    "deploy": "gh-pages -d docs"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.9.2"
+    "node-sass": "^4.13.1"
   }
 }
