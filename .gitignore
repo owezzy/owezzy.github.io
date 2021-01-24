@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/codeStyles/
+node_modules
+.idea/
+dist

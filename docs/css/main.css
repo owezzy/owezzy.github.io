@@ -56,7 +56,7 @@
     .menu-branding .potrait {
       width: 450px;
       height: 450px;
-      background: url(/dist/img/profile-pic-2.png);
+      background: url('/docs/img/profile-pic-2.png');
       border-radius: 50%;
       border: solid 3px #f5dd08; }
   .menu .nav-item {
@@ -103,7 +103,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(/dist/img/office-bg.jpg);
+    background: url('/docs/img/office-bg.jpg');
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
@@ -170,7 +170,7 @@ main {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background-image: url(/dist/img/profile-pic-small.png);
+    background-image: url('/docs/img/profile-pic-small.png');
     border: #f5dd08 3px solid; }
   .about-info .bio {
     grid-area: bio;
@@ -274,6 +274,9 @@ main {
 .btn-light {
   background: #3699fb;
   color: #333; }
+
+.cv-pdf, iframe {
+  margin: 0 auto; }
 
 .cv-container {
   width: 90%;
@@ -522,7 +525,7 @@ main {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .potrait {
-      background: url("/dist/img/profile-pic-small.jpg");
+      background: url('/docs/img/profile-pic-small.png');
       width: 150px;
       height: 150px; }
   .about-info {

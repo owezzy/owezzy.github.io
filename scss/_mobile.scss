@@ -1,0 +1,194 @@
+// wideScreens
+@include mediaXl {
+    .projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .cv-container {
+        width: 90%;
+        margin: 0 auto;
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+    #cv-timeline {
+        margin: {
+            top: 3em;
+            bottom: 3em;
+        }
+        &::before {
+            left: 50%;
+            margin-left: 0;
+        }
+    }
+    .cv-timeline-block {
+        margin: 4em 0 4em;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .cv-timeline-img {
+        width: 60px;
+        height: 60px;
+        left: 50%;
+        margin-left: -30px;
+        /* Force Hardware Acceleration in WebKit */
+        // -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        .cssanimations &.is-hidden {
+            visibility: hidden;
+        }
+        .cssanimations &.bounce-in {
+            visibility: visible;
+            animation: cd-bounce-1 .6s;
+        }
+    }
+    .cv-timeline-content {
+        margin-left: 0;
+        padding: 1.6em;
+        width: 45%;
+        &::before {
+            top: 24px;
+            left: 100%;
+            border-color: transparent;
+            border-left-color: $secondary-color;
+        }
+        .cv-read-more {
+            float: left;
+        }
+        .cv-date {
+            position: absolute;
+            width: 100%;
+            left: 122%;
+            top: 6px;
+            font-size: 16px;
+        }
+        .cv-timeline-block:nth-child(even) & {
+            float: right;
+            margin-right: 0;
+            padding: 1.6em;
+            width: 45%;
+            &::before {
+                top: 24px;
+                left: auto;
+                right: 100%;
+                border-color: transparent;
+                border-right-color: $secondary-color;
+            }
+            .cv-read-more {
+                float: right;
+            }
+            .cv-date {
+                left: auto;
+                right: 122%;
+                text-align: right;
+            }
+        }
+        .cssanimations &.is-hidden {
+            visibility: hidden;
+        }
+        .cssanimations &.bounce-in {
+            visibility: visible;
+            animation: cv-bounce-2 .6s;
+        }
+        /* inverse bounce effect on even content blocks */
+        .cssanimations .cv-timeline-block:nth-child(even) .cv-timeline-content.bounce-in {
+            animation: cv-bounce-2-inverse .6s;
+        } //
+        //keyframes
+        @keyframes cv-bounce-2 {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes cv-bounce-2-inverse {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateX(-20px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    }
+} //
+//desktops and laptops
+@include mediaLg {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .cd-read-more,
+    .cd-date {
+        font-size: 14px;
+    }
+} //tablets and notebooks
+@include mediaMd {
+    main {
+        align-items: center;
+        text-align: center;
+        .lg-heading {
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+    ul.menu-nav,
+    div.menu-branding {
+        float: none;
+        width: 100%;
+        min-height: 0;
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    .menu-nav {
+        height: 75vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 24px;
+    }
+    .menu-branding {
+        height: 25vh;
+        transform: translate3d(100%, 0, 0);
+        .potrait {
+            background: url(/docs/img/profile-pic-small.png);
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .about-info {
+        grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+        grid-template-columns: 1fr;
+    }
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} //smartphones
+@include mediaSm {
+    main#home h1 {
+        margin-top: 10vh;
+    }
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
