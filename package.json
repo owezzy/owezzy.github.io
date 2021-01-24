@@ -2,7 +2,7 @@
   "name": "owezzy.github.io",
   "version": "1.0.0",
   "description": "responsive web based portfolio",
-  "main": "docs/index.html",
+  "main": "index.html",
   "homepage": "https://github.com/owezzy/owezzy.github.io",
   "scripts": {
     "sass": "node-sass -w scss/ -o docs/css/ --recursive",
